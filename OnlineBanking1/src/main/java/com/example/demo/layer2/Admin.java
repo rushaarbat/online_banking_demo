@@ -2,14 +2,18 @@ package com.example.demo.layer2;
 
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="admin01")
+@Table(name="admin04")
 public class Admin {
 
 	@Id
@@ -20,21 +24,20 @@ public class Admin {
 	
 	/**************mapping**************************/
 	
-//	@OneToMany(cascade = CascadeType.ALL,mappedBy = "approval")
-//	Set<Approval> approvalSet = new HashSet<Approval>();
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "approval")
+	Set<Approval> approvalSet = new HashSet<Approval>();
 	
 	
 	/************setter getter***************/
 	
 	
+	public Set<Approval> getApprovalSet() {
+	return approvalSet;
+    }
+	public void setApprovalSet(Set<Approval> approvalSet) {
+		this.approvalSet = approvalSet;
+	}
 	
-//	public Set<Approval> getApprovalSet() {
-//		return approvalSet;
-//	}
-//	public void setApprovalSet(Set<Approval> approvalSet) {
-//		this.approvalSet = approvalSet;
-//	}
-//	
 	public int getAdminID() {
 		return adminID;
 	}

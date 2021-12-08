@@ -2,11 +2,14 @@ package com.example.demo.layer3;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
+
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.layer2.CustomerDetails;
 
-
+@Repository
 public class CustomerDetailsRepoImpl extends BaseRepository implements CustomerDetailsRepo{
 	
 	public CustomerDetailsRepoImpl() {
@@ -27,7 +30,7 @@ public class CustomerDetailsRepoImpl extends BaseRepository implements CustomerD
 	}
 
 	@Override
-	public List<CustomerDetails> selectCustomerDetails() {
+	public List<CustomerDetails> selectAllCustomerDetails() {
 		System.out.println("CustomerDetailsRepoImpl : Selecting all CustomerDetails...");
 		return super.findAll("CustomerDetails");
 	}

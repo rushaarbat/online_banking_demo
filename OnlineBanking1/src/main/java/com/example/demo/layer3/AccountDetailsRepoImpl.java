@@ -5,8 +5,10 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import com.example.demo.layer2.AccountDetails;
+import org.springframework.stereotype.Repository;
 
+import com.example.demo.layer2.AccountDetails;
+@Repository
 public class AccountDetailsRepoImpl extends BaseRepository implements AccountDetailsRepo{
 	
 	
@@ -29,7 +31,7 @@ public class AccountDetailsRepoImpl extends BaseRepository implements AccountDet
 	}
 
 	@Override
-	public List<AccountDetails> selectAccountDetails() {
+	public List<AccountDetails> selectAllAccountDetails() {
 		List<AccountDetails>  accdlist = new ArrayList<AccountDetails>();
 		
 		System.out.println("AccountDetailsRepoImpl : Selecting all AccountDetails...");

@@ -5,9 +5,10 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.layer2.TransactionTable;
-
+@Repository
 public class TransactionTableRepoImpl extends BaseRepository implements TransactionTableRepo{
 
 	@Transactional
@@ -24,7 +25,7 @@ public class TransactionTableRepoImpl extends BaseRepository implements Transact
 	}
 
 	@Override
-	public List<TransactionTable> selectTransactionTable() {
+	public List<TransactionTable> selectAllTransactionTable() {
 		List<TransactionTable>  ttList = new ArrayList<TransactionTable>();
 		
 		System.out.println("TransactionTableRepoImpl : Selecting all TransactionTable...");

@@ -12,7 +12,7 @@ public interface AccountDetailsRepo {
 		
 	AccountDetails selectAccountDetails(int adno); //R
 	
-		List<AccountDetails> selectAccountDetails(); //RA
+		List<AccountDetails> selectAllAccountDetails(); //RA
 		
 		void updateAccountDetails(AccountDetails adobj); //U
 		

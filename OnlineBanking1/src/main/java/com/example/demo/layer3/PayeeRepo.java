@@ -12,7 +12,7 @@ public interface PayeeRepo {
 	void insertPayee(Payee pobj); //C
 
 	Payee selectPayee(int pno); //R
-	List<Payee> selectPayees(); //RA
+	List<Payee> selectAllPayees(); //RA
 
 	void updatePayee(Payee pobj); //U
 	void deletePayee(Payee pobj); //D

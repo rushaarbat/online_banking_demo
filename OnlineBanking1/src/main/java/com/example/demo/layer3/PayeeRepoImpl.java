@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.layer2.CustomerDetails;
 import com.example.demo.layer2.Payee;
 
-@Repository("payeeRepo")
+@Repository
 public class PayeeRepoImpl extends BaseRepository implements PayeeRepo {
 
 	@Transactional
@@ -29,7 +29,7 @@ public class PayeeRepoImpl extends BaseRepository implements PayeeRepo {
 	}
 
 	@Override
-	public List<Payee> selectPayees() {
+	public List<Payee> selectAllPayees() {
 		List<Payee>  payeeList = new ArrayList<Payee>();
 
 		System.out.println("PayeeRepoImpl : Selecting all payees...");
